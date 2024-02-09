@@ -2,6 +2,6 @@
 require 'vendor/autoload.php';
 
 // echo 'ee';
-use Arostech\AnalyticsProcessing\Processor;
+use Arostech\Analytics\Processor;
 
 Processor::test();

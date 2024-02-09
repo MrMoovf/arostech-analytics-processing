@@ -1,17 +1,13 @@
 <?php
-namespace Arostech\AnalyticsProcessing;
+namespace Arostech\Analytics;
 
-use App\Helpers\ApiGet;
-use App\Models\Organisation;
 use App\Models\Request;
-use App\Models\SuperAdminBearerToken;
-use Illuminate\Support\Facades\Auth;
 
 
 class Processor{
 
     public static function test(){
-        echo 'i am the processor - now updated!';
+        echo 'i am the processor - now updated third time!';
     }
 
     
