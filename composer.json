@@ -11,5 +11,6 @@
             "name": "Aros Tech"
         }
     ],
-    "require": {}
+    "require": {},
+    "minimum-stability": "stable"
 }
