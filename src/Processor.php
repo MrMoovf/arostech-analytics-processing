@@ -12,10 +12,8 @@ class Processor{
 
     
     
-    public static function getProcessedAnalytics(){
+    public static function getProcessedAnalytics($data){
         try {
-            $data = Request::all();
-
 
             $analyticsShell = Processor::setupPrimaryStatistics();
 
