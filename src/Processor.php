@@ -12,7 +12,7 @@ class Processor{
 
     
     
-    public static function churnData(){
+    public static function getProcessedAnalytics(){
         try {
             $data = Request::all();
 
