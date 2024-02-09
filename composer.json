@@ -1,16 +1,25 @@
 {
     "name": "arostech/analytics-processing",
-    "description": "Process raw request data to generate insightfull metrics",
-    "autoload": {
-        "psr-4": {
-            "Arostech\\AnalyticsProcessing\\": "src/"
-        }
-    },
+    "description": "Process raw request data to generate insightful metrics",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aros Tech"
         }
     ],
-    "require": {},
-    "minimum-stability": "stable"
+    "autoload": {
+        "psr-4": {
+            "Arostech\\AnalyticsProcessing\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        
+    },
+    "require-dev": {
+        
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
