@@ -1,0 +1,15 @@
+{
+    "name": "arostech/analytics-processing",
+    "description": "Process raw request data to generate insightfull metrics",
+    "autoload": {
+        "psr-4": {
+            "Arostech\\AnalyticsProcessing\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aros Tech"
+        }
+    ],
+    "require": {}
+}
