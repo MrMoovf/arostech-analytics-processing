@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class Processor{
 
     public static function test(){
-        echo 'i am the processor';
+        echo 'i am the processor - now updated!';
     }
 
     
@@ -21,9 +21,9 @@ class Processor{
             $data = Request::all();
 
 
-            $analyticsShell = AnalyticsData::setupPrimaryStatistics();
+            $analyticsShell = Processor::setupPrimaryStatistics();
 
-            $analytics = AnalyticsData::loopThroughData($data, $analyticsShell);
+            $analytics = Processor::loopThroughData($data, $analyticsShell);
 
             return $analytics;
 
@@ -31,6 +31,7 @@ class Processor{
 
         } catch (\Throwable $th) {
             // dd($th);
+            return $th;
         }
     }
 
