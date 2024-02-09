@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class Processor{
 
+    public static function test(){
+        echo 'i am the processor';
+    }
+
     
     
     public static function churnData(){
