@@ -10,14 +10,18 @@ class Processor{
         echo 'i am the processor - now updated FOURTH time!';
     }
 
-    
+
     
     public static function getProcessedAnalytics($data){
         try {
 
             $analyticsShell = Processor::setupPrimaryStatistics();
 
-            $analytics = Processor::loopThroughData($data, $analyticsShell);
+            $analytics = Processor::clicksAndUniqueUsers($data, $analyticsShell);
+
+            // Processor::calcMovingAverage($analytics,'days','clicks',7);
+
+
 
             return $analytics;
 
@@ -27,6 +31,58 @@ class Processor{
             // dd($th);
             return $th;
         }
+    }
+
+    public static function calcMovingAverage($data, $timeFormat, $dataType, $windowWidth){
+        // Insert empty spaces to array matching the time window width: 7 days
+        $result = [];
+        for($i = 0; $i < $windowWidth-1; $i++){
+            array_push($result,[]);
+        }
+
+        // Get data
+        $data = $data[$timeFormat][$dataType];
+
+
+        // Gather window array
+
+
+        // Calculate average
+        $windows = [];
+        for($i = 0; $i < count($data) - $windowWidth + 1; $i++){
+            $window = array_slice($data,$i,$windowWidth);
+            array_push($windows, $window);
+            // dd($window);
+            $sum = array_reduce($window,'self::addYValues',0);
+            $time = end($window)['x'];
+            $average = round($sum / $windowWidth,2);
+
+            $xy = [
+                'x' => $time,
+                'y' => $average
+            ];
+
+            array_push($result,$xy);
+        }
+
+        dd('this is clicks over days',$data, 'this is result array',$result, 'this is windowed arrays to loop', $windows,'result', $result);
+
+
+
+        // Insert into array
+
+        // Repeat, sliding the window over to next day, inserting into array
+
+        // Repeat for all days
+
+        // Result should be array starting at the 7th day
+
+    }
+
+    public static function addYValues($sum, $point){
+        // dd($sum, $point['y']);
+        return $sum + $point['y'];
+
     }
 
     public static function setupPrimaryStatistics(){
@@ -45,7 +101,7 @@ class Processor{
         return $analyticsShell;
     }
 
-    public static function loopThroughData($data, $analyticsShell){
+    public static function clicksAndUniqueUsers($data, $analyticsShell){
 
         // Setting Unique visitors
         $unique_visitors = [];
