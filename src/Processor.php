@@ -1,7 +1,6 @@
 <?php
 namespace Arostech\Analytics;
 
-use App\Models\Request;
 
 
 class Processor{
