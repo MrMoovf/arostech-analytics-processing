@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "Arostech\\Analytics\\": "src/",
-            "Arostech\\Middleware\\": "src/Middleware/"
+            "Arostech\\Middleware\\": "src/Middleware/",
+            "Arostech\\Console\\Commands\\": "src/Console/Commands/"
         }
     },
     "require": {
