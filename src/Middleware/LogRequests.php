@@ -1,6 +1,6 @@
 <?php
 
-namespace Arostech\Analytics;
+namespace Arostech\Middleware;
 
 use Arostech\Models\Request as ModelsRequest;
 use Closure;
