@@ -30,11 +30,18 @@ class ProcessAnalytics extends Command
      */
     public function handle(): void
     {
+
+        $this->info('Processing analytics data...');
+
         $rawData = Request::all();
         $analytics = Processor::getProcessedAnalytics($rawData);
+
+        $this->info('Making and saving report to database...');
 
         Processedanalytic::create([
             'analytics' => $analytics
         ]);
+        $this->info('Success!');
+
     }
 }
