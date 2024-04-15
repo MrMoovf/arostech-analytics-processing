@@ -10,7 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Arostech\\Analytics\\": "src/"
+            "Arostech\\Analytics\\": "src/",
+            "Arostech\\Middleware": "src/Middleware"
         }
     },
     "require": {
@@ -21,5 +22,12 @@
         
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers":[
+                "Arostech\\Analytics\\AnalyticsServiceProvider"
+            ]
+        }
+    }
 }
