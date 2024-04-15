@@ -18,16 +18,11 @@ class Processor{
 
             $analytics = Processor::clicksAndUniqueUsers($data, $analyticsShell);
 
-            // Processor::calcMovingAverage($analytics,'days','clicks',7);
-
-
-
             return $analytics;
 
 
 
         } catch (\Throwable $th) {
-            // dd($th);
             return $th;
         }
     }

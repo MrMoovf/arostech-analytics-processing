@@ -3,8 +3,9 @@
 namespace Arostech\Console\Commands;
  
 use Arostech\Models\Processedanalytic;
-use Arostech\Models\Processor;
 use Arostech\Models\Request;
+use Arostech\Analytics\Processor;
+
 use Illuminate\Console\Command;
 
  
@@ -22,7 +23,7 @@ class ProcessAnalytics extends Command
      *
      * @var string
      */
-    protected $description = 'Send a marketing email to a user';
+    protected $description = 'Update the analytics report';
  
     /**
      * Execute the console command.
