@@ -3,7 +3,7 @@
 namespace Arostech\Analytics;
 
 use Illuminate\Support\ServiceProvider;
-use Arostech\Analytics\LogRequests;
+use Arostech\Middleware\LogRequests;
 use Illuminate\Contracts\Http\Kernel;
 
 
