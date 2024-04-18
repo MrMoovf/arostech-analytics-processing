@@ -17,6 +17,10 @@ class AnalyticsServiceProvider extends ServiceProvider {
         $this->commands([
             ProcessAnalytics::class,
         ]);
+
+        // include route to register new traffic on the front end
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
     
     }
 
