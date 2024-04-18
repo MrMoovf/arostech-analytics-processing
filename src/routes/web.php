@@ -14,6 +14,5 @@ Route::post('/analytics', function (Request $request){
         'visitor_id' => crypt($request->ip(),'123'),
         'referer' => request()->header('referer') ?? 'wasNull'
     ]);
-    return $response;
     return response('Middleware has run',200);
 });
